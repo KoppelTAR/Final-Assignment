@@ -10,3 +10,8 @@ exports.getMainPage = (request,response)=>{
 
         response.render('index',{CurrentTime: time});
 }
+
+exports.getAdminPanel = (request,response)=>{
+
+        response.render('admin');
+}
