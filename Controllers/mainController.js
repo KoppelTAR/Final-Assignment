@@ -14,7 +14,16 @@ exports.getMainPage = (request,response)=>{
         })  
 }
 
-exports.getAdminPanel = (request,response)=>{
-
-        response.render('admin');
+exports.getAdmin = (request,response)=>{
+        Data.fetchData(dataFromFile =>{
+        response.render('admin',{myData: dataFromFile[0]});
+        })
 }
+
+exports.postData = (req, res) => {
+        const Sbody = req.body
+        const newData = new Data(Sbody.fullName,Sbody.dateOfbirth,Sbody.placeOfresidence,Sbody.schools,Sbody.technicalSkills,Sbody.softSkills)
+        newData.saveData()
+
+        res.redirect('/')
+    }
