@@ -22,7 +22,8 @@ exports.getAdmin = (request,response)=>{
 
 exports.postData = (req, res) => {
         const Sbody = req.body
-        const newData = new Data(Sbody.fullName,Sbody.dateOfbirth,Sbody.placeOfresidence,Sbody.schools,Sbody.technicalSkills,Sbody.softSkills)
+        const newData = new Data(Sbody.fullName,Sbody.dateOfbirth,Sbody.placeOfresidence,
+                Sbody.schools,Sbody.technicalSkills,Sbody.softSkills,req.file.filename)
         newData.saveData()
 
         res.redirect('/')

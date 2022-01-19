@@ -4,13 +4,14 @@ const path = require('path')
 const FilePath = path.join(path.dirname(require.main.filename), 'data', 'data.json')
 
 module.exports = class Data {
-    constructor(fullName, dateOfbirth,placeOfresidence,schools,technicalSkills,softSkills){
-        this.fullName = fullName
-        this.dateOfbirth = dateOfbirth
-        this.placeOfresidence = placeOfresidence
-        this.schools = schools
-        this.technicalSkills = technicalSkills
-        this.softSkills = softSkills
+    constructor(_fullName, _dateOfbirth,_placeOfresidence,_schools,_technicalSkills,_softSkills,_image){
+        this.fullName = _fullName
+        this.dateOfbirth = _dateOfbirth
+        this.placeOfresidence = _placeOfresidence
+        this.schools = _schools
+        this.technicalSkills = _technicalSkills
+        this.softSkills = _softSkills
+        this.image = _image
     }
 
     saveData(){
